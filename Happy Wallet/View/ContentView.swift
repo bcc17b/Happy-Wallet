@@ -9,30 +9,54 @@ import SwiftUI
 import CoreData
 
 struct ContentView: View {
+    
     @Environment(\.managedObjectContext) private var viewContext
 
     @FetchRequest(
-        sortDescriptors: [NSSortDescriptor(keyPath: \Item.timestamp, ascending: true)],
+        sortDescriptors: [NSSortDescriptor(keyPath: \Item.name, ascending: true)],
         animation: .default)
     private var items: FetchedResults<Item>
-
+    public var budget = 750
+    //Properties
+    @State private var showAddPuchase: Bool = false
+    
+    //Body
     var body: some View {
-        List {
-            ForEach(items) { item in
-                Text("Item at \(item.timestamp!, formatter: itemFormatter)")
+        NavigationView{
+            VStack{
+                
+                Text("$750.00")
+                    .font(.title)
+                    .fontWeight(.bold)
+                    .multilineTextAlignment(.center)
+                    .padding(.top)
+                    
+                
+                Spacer()
+                List{
+                    ForEach(self.items, id: \.self) {items in
+                        HStack{
+                            Text(items.name ?? "Unknown")
+                            
+                            Spacer()
+                            
+                            Text(items.price ?? "Unknown")
+                        }
+                    }//End list input
+                }
             }
-            .onDelete(perform: deleteItems)
-        }
-        .toolbar {
-            #if os(iOS)
-            EditButton()
-            #endif
-
-            Button(action: addItem) {
-                Label("Add Item", systemImage: "plus")
+            .navigationBarTitle("Expenes", displayMode: .inline)
+            
+            .navigationBarItems(trailing: Button(action:{
+                self.showAddPuchase.toggle()
+            }){
+                Image(systemName: "plus")
+            })//End of Button for More Puchases
+            .sheet(isPresented: $showAddPuchase){
+                AddPuchase().environment(\.managedObjectContext, self.viewContext)
             }
-        }
-    }
+        }//End of Navigation
+    }//End of Body
 
     private func addItem() {
         withAnimation {
@@ -75,6 +99,6 @@ private let itemFormatter: DateFormatter = {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView().environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
+        return ContentView().environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
     }
 }

@@ -13,6 +13,7 @@
 		1CBA4D45256C4E3F00DCF0FE /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1CBA4D44256C4E3F00DCF0FE /* Preview Assets.xcassets */; };
 		1CBA4D47256C4E3F00DCF0FE /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CBA4D46256C4E3F00DCF0FE /* Persistence.swift */; };
 		1CBA4D4A256C4E3F00DCF0FE /* Happy_Wallet.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1CBA4D48256C4E3F00DCF0FE /* Happy_Wallet.xcdatamodeld */; };
+		1CBA4D55256C4F5E00DCF0FE /* AddPuchase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CBA4D54256C4F5E00DCF0FE /* AddPuchase.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		1CBA4D46256C4E3F00DCF0FE /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		1CBA4D49256C4E3F00DCF0FE /* Happy_Wallet.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Happy_Wallet.xcdatamodel; sourceTree = "<group>"; };
 		1CBA4D4B256C4E3F00DCF0FE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1CBA4D54256C4F5E00DCF0FE /* AddPuchase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPuchase.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,7 +59,7 @@
 			isa = PBXGroup;
 			children = (
 				1CBA4D3D256C4E3A00DCF0FE /* Happy_WalletApp.swift */,
-				1CBA4D3F256C4E3A00DCF0FE /* ContentView.swift */,
+				1CBA4D52256C4F3900DCF0FE /* View */,
 				1CBA4D41256C4E3F00DCF0FE /* Assets.xcassets */,
 				1CBA4D46256C4E3F00DCF0FE /* Persistence.swift */,
 				1CBA4D4B256C4E3F00DCF0FE /* Info.plist */,
@@ -73,6 +75,15 @@
 				1CBA4D44256C4E3F00DCF0FE /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		1CBA4D52256C4F3900DCF0FE /* View */ = {
+			isa = PBXGroup;
+			children = (
+				1CBA4D3F256C4E3A00DCF0FE /* ContentView.swift */,
+				1CBA4D54256C4F5E00DCF0FE /* AddPuchase.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -148,6 +159,7 @@
 				1CBA4D40256C4E3A00DCF0FE /* ContentView.swift in Sources */,
 				1CBA4D3E256C4E3A00DCF0FE /* Happy_WalletApp.swift in Sources */,
 				1CBA4D4A256C4E3F00DCF0FE /* Happy_Wallet.xcdatamodeld in Sources */,
+				1CBA4D55256C4F5E00DCF0FE /* AddPuchase.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
