@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1C3050DA25831972001BDC0F /* Charts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C3050D325831937001BDC0F /* Charts.framework */; };
+		1C3050DB25831972001BDC0F /* Charts.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1C3050D325831937001BDC0F /* Charts.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		1C3050E4258320FC001BDC0F /* HomePieChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C3050E3258320FC001BDC0F /* HomePieChart.swift */; };
+		1C3050E625833533001BDC0F /* TestData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C3050E525833533001BDC0F /* TestData.swift */; };
+		1C3050E825835270001BDC0F /* ChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C3050E725835270001BDC0F /* ChartView.swift */; };
 		1CBA4D3E256C4E3A00DCF0FE /* Happy_WalletApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CBA4D3D256C4E3A00DCF0FE /* Happy_WalletApp.swift */; };
 		1CBA4D40256C4E3A00DCF0FE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CBA4D3F256C4E3A00DCF0FE /* ContentView.swift */; };
 		1CBA4D42256C4E3F00DCF0FE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1CBA4D41256C4E3F00DCF0FE /* Assets.xcassets */; };
@@ -16,7 +21,42 @@
 		1CBA4D55256C4F5E00DCF0FE /* AddPuchase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CBA4D54256C4F5E00DCF0FE /* AddPuchase.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		1C3050D225831937001BDC0F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1C3050CD25831937001BDC0F /* Charts.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 65AD9E95D9ED4DC0BD73A743;
+			remoteInfo = Charts;
+		};
+		1C3050D425831937001BDC0F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1C3050CD25831937001BDC0F /* Charts.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 1CBBC58C6CE1EBEE9852CE41;
+			remoteInfo = ChartsTests;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		1C3050DC25831972001BDC0F /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				1C3050DB25831972001BDC0F /* Charts.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		1C3050CD25831937001BDC0F /* Charts.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Charts.xcodeproj; path = "../../../Downloads/Charts-master/Charts.xcodeproj"; sourceTree = "<group>"; };
+		1C3050E3258320FC001BDC0F /* HomePieChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePieChart.swift; sourceTree = "<group>"; };
+		1C3050E525833533001BDC0F /* TestData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestData.swift; sourceTree = "<group>"; };
+		1C3050E725835270001BDC0F /* ChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartView.swift; sourceTree = "<group>"; };
 		1CBA4D3A256C4E3A00DCF0FE /* Happy Wallet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Happy Wallet.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1CBA4D3D256C4E3A00DCF0FE /* Happy_WalletApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Happy_WalletApp.swift; sourceTree = "<group>"; };
 		1CBA4D3F256C4E3A00DCF0FE /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -33,17 +73,34 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1C3050DA25831972001BDC0F /* Charts.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1C3050CE25831937001BDC0F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1C3050D325831937001BDC0F /* Charts.framework */,
+				1C3050D525831937001BDC0F /* ChartsTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		1C3050D925831972001BDC0F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		1CBA4D31256C4E3A00DCF0FE = {
 			isa = PBXGroup;
 			children = (
 				1CBA4D3C256C4E3A00DCF0FE /* Happy Wallet */,
-				1CBA4D3B256C4E3A00DCF0FE /* Products */,
+				1C3050D925831972001BDC0F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -53,14 +110,19 @@
 				1CBA4D3A256C4E3A00DCF0FE /* Happy Wallet.app */,
 			);
 			name = Products;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		1CBA4D3C256C4E3A00DCF0FE /* Happy Wallet */ = {
 			isa = PBXGroup;
 			children = (
 				1CBA4D3D256C4E3A00DCF0FE /* Happy_WalletApp.swift */,
+				1C3050E3258320FC001BDC0F /* HomePieChart.swift */,
+				1C3050E525833533001BDC0F /* TestData.swift */,
+				1CBA4D3B256C4E3A00DCF0FE /* Products */,
 				1CBA4D52256C4F3900DCF0FE /* View */,
 				1CBA4D41256C4E3F00DCF0FE /* Assets.xcassets */,
+				1C3050CD25831937001BDC0F /* Charts.xcodeproj */,
 				1CBA4D46256C4E3F00DCF0FE /* Persistence.swift */,
 				1CBA4D4B256C4E3F00DCF0FE /* Info.plist */,
 				1CBA4D48256C4E3F00DCF0FE /* Happy_Wallet.xcdatamodeld */,
@@ -80,8 +142,9 @@
 		1CBA4D52256C4F3900DCF0FE /* View */ = {
 			isa = PBXGroup;
 			children = (
-				1CBA4D3F256C4E3A00DCF0FE /* ContentView.swift */,
 				1CBA4D54256C4F5E00DCF0FE /* AddPuchase.swift */,
+				1CBA4D3F256C4E3A00DCF0FE /* ContentView.swift */,
+				1C3050E725835270001BDC0F /* ChartView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -96,6 +159,7 @@
 				1CBA4D36256C4E3A00DCF0FE /* Sources */,
 				1CBA4D37256C4E3A00DCF0FE /* Frameworks */,
 				1CBA4D38256C4E3A00DCF0FE /* Resources */,
+				1C3050DC25831972001BDC0F /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -131,12 +195,35 @@
 			mainGroup = 1CBA4D31256C4E3A00DCF0FE;
 			productRefGroup = 1CBA4D3B256C4E3A00DCF0FE /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 1C3050CE25831937001BDC0F /* Products */;
+					ProjectRef = 1C3050CD25831937001BDC0F /* Charts.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				1CBA4D39256C4E3A00DCF0FE /* Happy Wallet */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		1C3050D325831937001BDC0F /* Charts.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Charts.framework;
+			remoteRef = 1C3050D225831937001BDC0F /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		1C3050D525831937001BDC0F /* ChartsTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = ChartsTests.xctest;
+			remoteRef = 1C3050D425831937001BDC0F /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		1CBA4D38256C4E3A00DCF0FE /* Resources */ = {
@@ -159,7 +246,10 @@
 				1CBA4D40256C4E3A00DCF0FE /* ContentView.swift in Sources */,
 				1CBA4D3E256C4E3A00DCF0FE /* Happy_WalletApp.swift in Sources */,
 				1CBA4D4A256C4E3F00DCF0FE /* Happy_Wallet.xcdatamodeld in Sources */,
+				1C3050E4258320FC001BDC0F /* HomePieChart.swift in Sources */,
+				1C3050E625833533001BDC0F /* TestData.swift in Sources */,
 				1CBA4D55256C4F5E00DCF0FE /* AddPuchase.swift in Sources */,
+				1C3050E825835270001BDC0F /* ChartView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
