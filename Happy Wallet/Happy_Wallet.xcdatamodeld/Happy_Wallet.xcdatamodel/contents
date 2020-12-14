@@ -11,8 +11,14 @@
         <attribute name="price" optional="YES" attributeType="String"/>
         <attribute name="timestamp" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
     </entity>
+    <entity name="Living" representedClassName="Living" syncable="YES" codeGenerationType="class">
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="price" optional="YES" attributeType="String"/>
+    </entity>
     <elements>
         <element name="HappyWallet" positionX="-63" positionY="-18" width="128" height="88"/>
         <element name="Item" positionX="-63" positionY="-18" width="128" height="103"/>
+        <element name="Living" positionX="-54" positionY="18" width="128" height="88"/>
     </elements>
 </model>

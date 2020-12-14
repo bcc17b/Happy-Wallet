@@ -25,7 +25,6 @@ struct HomeChart: UIViewRepresentable {
         
         configureChart(uiView)
         formatCenter(uiView)
-        formatDescription(uiView.chartDescription)
         formatLegend(uiView.legend)
         formatDataSet(dataSet)
         uiView.notifyDataSetChanged()
@@ -41,7 +40,7 @@ struct HomeChart: UIViewRepresentable {
             let num = Int(entry.value(forKey: "value")! as! Double)
             parent.pieChart.centerText = """
                 \(labelText)
-                \(num)
+                \(num)%
                 """
         }
     }
@@ -63,10 +62,6 @@ struct HomeChart: UIViewRepresentable {
         pieChart.centerTextRadiusPercent = 0.95
     }
     
-    func formatDescription(_ description: Description){
-        description.text = "Budget"
-        description.font = UIFont.boldSystemFont(ofSize: 30)
-    }
     
     func formatLegend(_ legend: Legend){
         legend.enabled = false

@@ -8,7 +8,7 @@
 import SwiftUI
 import CoreData
 
-struct ContentView: View {
+struct SavingsView: View {
     
     @Environment(\.managedObjectContext) var managedObjectContext
 
@@ -17,7 +17,6 @@ struct ContentView: View {
     public var budget = 750
     //Properties
     @State private var showAddPuchase: Bool = false
-    @State private var goHome: Bool = false
     @State public var spendable: Double? = 0.00
     
     private var currencyFormatter: NumberFormatter = {
@@ -43,39 +42,10 @@ struct ContentView: View {
                     
                 
                 Spacer()
-                List{
-                    ForEach(self.items, id: \.self) {items in
-                        HStack{
-                            Text(items.name ?? "Unknown")
-                            
-                            Spacer()
-                            
-                            Text(items.price ?? "Unknown")
-                        }
-                    }//End list input
-                }
                 
             }
-            .navigationBarTitle("Expenses", displayMode: .inline)
+            .navigationBarTitle("Savings", displayMode: .inline)
             
-            .navigationBarItems(leading: Button(action:{
-                self.goHome.toggle()
-            }){
-                Image(systemName: "")
-            })//End of Button for More Puchases
-            .sheet(isPresented: $goHome){
-                ChartView().environment(\.managedObjectContext, self.managedObjectContext)
-            }
-            
-            .navigationBarItems(trailing: Button(action:{
-                self.showAddPuchase.toggle()
-            }){
-                Image(systemName: "plus")
-            })//End of Button for More Puchases
-            .sheet(isPresented: $showAddPuchase){
-                AddPuchase().environment(\.managedObjectContext, self.managedObjectContext)
-            }
-            .padding(.horizontal)
         }//End of Navigation
     }//End of Body
 
@@ -83,21 +53,6 @@ struct ContentView: View {
         withAnimation {
             let newItem = Item(context: managedObjectContext)
             newItem.timestamp = Date()
-
-            do {
-                try managedObjectContext.save()
-            } catch {
-                // Replace this implementation with code to handle the error appropriately.
-                // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-                let nsError = error as NSError
-                fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
-            }
-        }
-    }
-
-    private func deleteItems(offsets: IndexSet) {
-        withAnimation {
-            offsets.map { items[$0] }.forEach(managedObjectContext.delete)
 
             do {
                 try managedObjectContext.save()
@@ -118,8 +73,8 @@ private let itemFormatter: DateFormatter = {
     return formatter
 }()
 
-struct ContentView_Previews: PreviewProvider {
+struct SavingsView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        SavingsView()
     }
 }

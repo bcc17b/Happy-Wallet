@@ -8,7 +8,7 @@
 import SwiftUI
 import CoreData
 
-struct ContentView: View {
+struct LifeSpendigView: View {
     
     @Environment(\.managedObjectContext) var managedObjectContext
 
@@ -17,7 +17,6 @@ struct ContentView: View {
     public var budget = 750
     //Properties
     @State private var showAddPuchase: Bool = false
-    @State private var goHome: Bool = false
     @State public var spendable: Double? = 0.00
     
     private var currencyFormatter: NumberFormatter = {
@@ -58,15 +57,6 @@ struct ContentView: View {
             }
             .navigationBarTitle("Expenses", displayMode: .inline)
             
-            .navigationBarItems(leading: Button(action:{
-                self.goHome.toggle()
-            }){
-                Image(systemName: "")
-            })//End of Button for More Puchases
-            .sheet(isPresented: $goHome){
-                ChartView().environment(\.managedObjectContext, self.managedObjectContext)
-            }
-            
             .navigationBarItems(trailing: Button(action:{
                 self.showAddPuchase.toggle()
             }){
@@ -75,7 +65,6 @@ struct ContentView: View {
             .sheet(isPresented: $showAddPuchase){
                 AddPuchase().environment(\.managedObjectContext, self.managedObjectContext)
             }
-            .padding(.horizontal)
         }//End of Navigation
     }//End of Body
 
@@ -118,8 +107,8 @@ private let itemFormatter: DateFormatter = {
     return formatter
 }()
 
-struct ContentView_Previews: PreviewProvider {
+struct LifeSpendigView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        LifeSpendigView()
     }
 }

@@ -16,7 +16,7 @@ struct Happy_WalletApp: App {
 
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ChartView()
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
         }
     }

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1C1449692586D33C00FAFB6E /* LifeSpendingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C1449682586D33C00FAFB6E /* LifeSpendingView.swift */; };
+		1C14496D2586D35800FAFB6E /* SavingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C14496C2586D35800FAFB6E /* SavingsView.swift */; };
 		1C3050DA25831972001BDC0F /* Charts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C3050D325831937001BDC0F /* Charts.framework */; };
 		1C3050DB25831972001BDC0F /* Charts.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1C3050D325831937001BDC0F /* Charts.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		1C3050E4258320FC001BDC0F /* HomePieChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C3050E3258320FC001BDC0F /* HomePieChart.swift */; };
@@ -16,9 +18,9 @@
 		1CBA4D40256C4E3A00DCF0FE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CBA4D3F256C4E3A00DCF0FE /* ContentView.swift */; };
 		1CBA4D42256C4E3F00DCF0FE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1CBA4D41256C4E3F00DCF0FE /* Assets.xcassets */; };
 		1CBA4D45256C4E3F00DCF0FE /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1CBA4D44256C4E3F00DCF0FE /* Preview Assets.xcassets */; };
-		1CBA4D47256C4E3F00DCF0FE /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CBA4D46256C4E3F00DCF0FE /* Persistence.swift */; };
 		1CBA4D4A256C4E3F00DCF0FE /* Happy_Wallet.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1CBA4D48256C4E3F00DCF0FE /* Happy_Wallet.xcdatamodeld */; };
 		1CBA4D55256C4F5E00DCF0FE /* AddPuchase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CBA4D54256C4F5E00DCF0FE /* AddPuchase.swift */; };
+		1CFF26C925843A00001A8C1B /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CFF26C825843A00001A8C1B /* Persistence.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,19 +55,21 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		1C1449682586D33C00FAFB6E /* LifeSpendingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LifeSpendingView.swift; sourceTree = "<group>"; };
+		1C14496C2586D35800FAFB6E /* SavingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavingsView.swift; sourceTree = "<group>"; };
 		1C3050CD25831937001BDC0F /* Charts.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Charts.xcodeproj; path = "../../../Downloads/Charts-master/Charts.xcodeproj"; sourceTree = "<group>"; };
 		1C3050E3258320FC001BDC0F /* HomePieChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePieChart.swift; sourceTree = "<group>"; };
 		1C3050E525833533001BDC0F /* TestData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestData.swift; sourceTree = "<group>"; };
-		1C3050E725835270001BDC0F /* ChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartView.swift; sourceTree = "<group>"; };
+		1C3050E725835270001BDC0F /* ChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartView.swift; sourceTree = "<group>"; tabWidth = 4; usesTabs = 0; };
 		1CBA4D3A256C4E3A00DCF0FE /* Happy Wallet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Happy Wallet.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1CBA4D3D256C4E3A00DCF0FE /* Happy_WalletApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Happy_WalletApp.swift; sourceTree = "<group>"; };
 		1CBA4D3F256C4E3A00DCF0FE /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		1CBA4D41256C4E3F00DCF0FE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1CBA4D44256C4E3F00DCF0FE /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		1CBA4D46256C4E3F00DCF0FE /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		1CBA4D49256C4E3F00DCF0FE /* Happy_Wallet.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Happy_Wallet.xcdatamodel; sourceTree = "<group>"; };
 		1CBA4D4B256C4E3F00DCF0FE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1CBA4D54256C4F5E00DCF0FE /* AddPuchase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPuchase.swift; sourceTree = "<group>"; };
+		1CFF26C825843A00001A8C1B /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,11 +123,11 @@
 				1CBA4D3D256C4E3A00DCF0FE /* Happy_WalletApp.swift */,
 				1C3050E3258320FC001BDC0F /* HomePieChart.swift */,
 				1C3050E525833533001BDC0F /* TestData.swift */,
+				1CFF26C825843A00001A8C1B /* Persistence.swift */,
 				1CBA4D3B256C4E3A00DCF0FE /* Products */,
 				1CBA4D52256C4F3900DCF0FE /* View */,
 				1CBA4D41256C4E3F00DCF0FE /* Assets.xcassets */,
 				1C3050CD25831937001BDC0F /* Charts.xcodeproj */,
-				1CBA4D46256C4E3F00DCF0FE /* Persistence.swift */,
 				1CBA4D4B256C4E3F00DCF0FE /* Info.plist */,
 				1CBA4D48256C4E3F00DCF0FE /* Happy_Wallet.xcdatamodeld */,
 				1CBA4D43256C4E3F00DCF0FE /* Preview Content */,
@@ -144,6 +148,8 @@
 			children = (
 				1CBA4D54256C4F5E00DCF0FE /* AddPuchase.swift */,
 				1CBA4D3F256C4E3A00DCF0FE /* ContentView.swift */,
+				1C1449682586D33C00FAFB6E /* LifeSpendingView.swift */,
+				1C14496C2586D35800FAFB6E /* SavingsView.swift */,
 				1C3050E725835270001BDC0F /* ChartView.swift */,
 			);
 			path = View;
@@ -242,14 +248,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1CBA4D47256C4E3F00DCF0FE /* Persistence.swift in Sources */,
 				1CBA4D40256C4E3A00DCF0FE /* ContentView.swift in Sources */,
 				1CBA4D3E256C4E3A00DCF0FE /* Happy_WalletApp.swift in Sources */,
 				1CBA4D4A256C4E3F00DCF0FE /* Happy_Wallet.xcdatamodeld in Sources */,
 				1C3050E4258320FC001BDC0F /* HomePieChart.swift in Sources */,
+				1C14496D2586D35800FAFB6E /* SavingsView.swift in Sources */,
 				1C3050E625833533001BDC0F /* TestData.swift in Sources */,
+				1C1449692586D33C00FAFB6E /* LifeSpendingView.swift in Sources */,
 				1CBA4D55256C4F5E00DCF0FE /* AddPuchase.swift in Sources */,
 				1C3050E825835270001BDC0F /* ChartView.swift in Sources */,
+				1CFF26C925843A00001A8C1B /* Persistence.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
