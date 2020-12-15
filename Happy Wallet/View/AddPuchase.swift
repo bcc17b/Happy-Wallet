@@ -18,6 +18,7 @@ struct AddPuchase: View {
     @State private var errorTitle: String = ""
     @State private var errorMessage: String = ""
     
+    
     //Body
     var body: some View {
         NavigationView{
@@ -66,10 +67,4 @@ struct AddPuchase: View {
             }
         }//End of Navigation
     }//End of Body
-}
-
-struct AddPuchase_Previews: PreviewProvider {
-    static var previews: some View {
-        AddPuchase()
-    }
 }

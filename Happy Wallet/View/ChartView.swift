@@ -11,9 +11,9 @@ import SwiftUI
 struct ChartView: View {
     @State private var pieChartEntries: [PieChartDataEntry] = []
     @State private var category: Test.Category = .variety
-    @State private var budget: Double? = 0.00
+    @State public var budget: Double? = 0.00
     
-    private var currencyFormatter: NumberFormatter = {
+    public var currencyFormatter: NumberFormatter = {
         let dollars = NumberFormatter()
         // allow no currency symbol, extra digits, etc
         dollars.isLenient = true
@@ -28,6 +28,7 @@ struct ChartView: View {
                 Text("Budget")
                     .font(Font.system(size: 50, weight: .bold, design: .default))
                     .padding()
+                
                 TextField("Income", value: $budget, formatter: currencyFormatter)
                     .padding(10)
                     .font(Font.system(size: 30, weight: .medium, design: .default))
@@ -41,7 +42,7 @@ struct ChartView: View {
                 }
                 HStack{
                     NavigationLink(
-                        destination: SavingsView(),
+                        destination: SavingsView(budget: self.$budget),
                         label: {
                             Text("Savings")
                                 .font(Font.system(size: 20, weight: .medium, design: .default))
@@ -52,7 +53,7 @@ struct ChartView: View {
                         .padding()
                     
                     NavigationLink(
-                        destination: LifeSpendigView(),
+                        destination: LifeSpendigView(budget: self.$budget),
                         label: {
                             Text("Living")
                                 .font(Font.system(size: 20, weight: .medium, design: .default))
@@ -62,7 +63,7 @@ struct ChartView: View {
                         })
                         .padding()
                     NavigationLink(
-                        destination: ContentView(),
+                        destination: ContentView(budget: self.$budget),
                         label: {
                             Text("Other")
                                 .font(Font.system(size: 20, weight: .medium, design: .default))
@@ -81,16 +82,5 @@ struct ChartView: View {
 struct ChartView_Previews: PreviewProvider {
     static var previews: some View {
         ChartView()
-    }
-}
-
-struct FilledButton: ButtonStyle {
-    func makeBody(configuration: Configuration) -> some View {
-        configuration
-            .label
-            .foregroundColor(configuration.isPressed ? .gray : .white)
-            .padding()
-            .background(Color.green)
-            .cornerRadius(8)
     }
 }

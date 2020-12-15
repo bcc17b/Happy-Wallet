@@ -14,32 +14,40 @@ struct ContentView: View {
 
     @FetchRequest( entity: Item.entity(), sortDescriptors: [NSSortDescriptor(keyPath: \Item.name, ascending: true)],
                    animation: .default) var items: FetchedResults<Item>
-    public var budget = 750
     //Properties
+    @Binding var budget: Double?
     @State private var showAddPuchase: Bool = false
     @State private var goHome: Bool = false
-    @State public var spendable: Double? = 0.00
+    @State var spendable: Double? = 0.00
     
-    private var currencyFormatter: NumberFormatter = {
+    public init(budget: Binding<Double?>){
+        self._budget = budget
+        self._spendable = State(wrappedValue: budget.wrappedValue)
+    }
+    
+    public var currencyFormatter: NumberFormatter = {
         let dollars = NumberFormatter()
-        // allow no currency symbol, extra digits, etc
         dollars.isLenient = true
         dollars.numberStyle = .currency
         return dollars
     }()
     
+    public var percentage: Double {
+        let total = spendable ?? 0
+        let tipPercent = 0.3
+        return total * tipPercent
+    }
+    
+    private var formattedFinalTotal: String {
+        currencyFormatter.string(from: NSNumber(value: percentage)) ?? "--"
+    }
     
     //Body
     var body: some View {
         NavigationView{
             VStack{
-                
-                Text("$750.00")
-                    .font(.title)
-                    .fontWeight(.bold)
-                    .multilineTextAlignment(.center)
-                    .padding(.top)
-                    .foregroundColor(.green)
+                Spacer()
+                summaryLine(amount: formattedFinalTotal, color: .gray)
                     
                 
                 Spacer()
@@ -52,9 +60,10 @@ struct ContentView: View {
                             
                             Text(items.price ?? "Unknown")
                         }
+                        
                     }//End list input
+                    .onDelete(perform: deleteItems)
                 }
-                
             }
             .navigationBarTitle("Expenses", displayMode: .inline)
             
@@ -78,6 +87,14 @@ struct ContentView: View {
             .padding(.horizontal)
         }//End of Navigation
     }//End of Body
+    
+    private func summaryLine(amount: String, color: Color) -> some View {
+           Text(amount)
+            .padding(10)
+            .font(Font.system(size: 30, weight: .medium, design: .default))
+            .overlay(RoundedRectangle(cornerRadius: 25).stroke(Color.blue, lineWidth: 3))
+            .multilineTextAlignment(.center)
+    }
 
     private func addItem() {
         withAnimation {
@@ -96,9 +113,9 @@ struct ContentView: View {
     }
 
     private func deleteItems(offsets: IndexSet) {
-        withAnimation {
-            offsets.map { items[$0] }.forEach(managedObjectContext.delete)
-
+        for index in offsets {
+            let item = items[index]
+            managedObjectContext.delete(item)
             do {
                 try managedObjectContext.save()
             } catch {
@@ -118,8 +135,3 @@ private let itemFormatter: DateFormatter = {
     return formatter
 }()
 
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
-    }
-}

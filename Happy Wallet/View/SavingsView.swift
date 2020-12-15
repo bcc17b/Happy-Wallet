@@ -14,40 +14,55 @@ struct SavingsView: View {
 
     @FetchRequest( entity: Item.entity(), sortDescriptors: [NSSortDescriptor(keyPath: \Item.name, ascending: true)],
                    animation: .default) var items: FetchedResults<Item>
-    public var budget = 750
     //Properties
     @State private var showAddPuchase: Bool = false
-    @State public var spendable: Double? = 0.00
+    @Binding var budget: Double?
+    @State var spendable: Double? = 0.00
     
-    private var currencyFormatter: NumberFormatter = {
+    public init(budget: Binding<Double?>){
+        self._budget = budget
+        self._spendable = State(wrappedValue: budget.wrappedValue)
+    }
+    
+    public var currencyFormatter: NumberFormatter = {
         let dollars = NumberFormatter()
-        // allow no currency symbol, extra digits, etc
         dollars.isLenient = true
         dollars.numberStyle = .currency
         return dollars
     }()
     
+    private var percentage: Double {
+        let total = spendable ?? 0
+        let tipPercent = 0.2
+        return total * tipPercent
+    }
+    
+    private var formattedFinalTotal: String {
+        currencyFormatter.string(from: NSNumber(value: percentage)) ?? "--"
+    }
+    
     
     //Body
     var body: some View {
         NavigationView{
-            VStack{
-                
-                Text("$750.00")
-                    .font(.title)
-                    .fontWeight(.bold)
-                    .multilineTextAlignment(.center)
-                    .padding(.top)
-                    .foregroundColor(.green)
-                    
-                
-                Spacer()
+            VStack(alignment: .center){
+                HStack(alignment: .center){
+                    summaryLine(amount: formattedFinalTotal, color: .gray)
+                }
                 
             }
             .navigationBarTitle("Savings", displayMode: .inline)
             
         }//End of Navigation
     }//End of Body
+    
+    private func summaryLine(amount: String, color: Color) -> some View {
+           Text(amount)
+            .padding(10)
+            .font(Font.system(size: 30, weight: .medium, design: .default))
+            .overlay(RoundedRectangle(cornerRadius: 25).stroke(Color.green, lineWidth: 3))
+            .multilineTextAlignment(.center)
+    }
 
     private func addItem() {
         withAnimation {
@@ -72,9 +87,3 @@ private let itemFormatter: DateFormatter = {
     formatter.timeStyle = .medium
     return formatter
 }()
-
-struct SavingsView_Previews: PreviewProvider {
-    static var previews: some View {
-        SavingsView()
-    }
-}
